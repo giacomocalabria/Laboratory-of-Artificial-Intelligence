@@ -22,6 +22,8 @@ Definiamo una regola come segue:
 colleague(X,Y) :- work(X,Z), work(Y,Z).
 ```
 
+Due lavoratori X e Y sono colleghi se lavorano nella stessa azienda Z. La virgola funge da connettore logico AND
+
 Definiamo i fatti così:
 
 ```prolog
@@ -45,4 +47,16 @@ Una volta definito la base di conoscenza nel programma, tramite fatti e regole p
 
 Prolog applica l'inferenza sui nuovi fatti dal programma e risponde alle interrogazioni
 
-Esempio: vogliamo sapere se
+Esempio: vogliamo sapere se due lavoratori sono colleghi. Sarà necessario fare la seguente interrogazione
+
+```prolog
+?- colleague(emp1, emp2). 
+
+?- colleague(emp1, emp3).
+```
+
+Lanciando queste interrogazioni prolog tramite inferenza andrà a produrre il seguente risultato
+
+![1680365965646](image/Lab4_prolog/1680365965646.png)
+
+Il risultato è corente con quanto definito dal problema. Infatti abbiamo messo la regola che due lavoratori X e Y sono colleghi se lavorano nella stessa azienda Z.
